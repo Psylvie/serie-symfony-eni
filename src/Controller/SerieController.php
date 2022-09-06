@@ -6,15 +6,32 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route('/series', name="serie_")
+ */
 class SerieController extends AbstractController
 {
     /**
-     * @Route("/serie", name="app_serie")
+     * @Route("", name="list")
      */
-    public function index(): Response
+    public function list(): Response
     {
-        return $this->render('serie/index.html.twig', [
-            'controller_name' => 'SerieController',
+        return $this->render('serie/list.html.twig', [
         ]);
     }
+
+    /**
+     * @Route("/details/{id}", name="details")
+     */
+    public function details(int $id): Response
+    {
+        return $this->render('serie/details.html.twig');
+}
+
+    /**
+     * @Route('/create', name="create")
+     */
+public function create():Response{
+        return $this->render('serie/create.html.twig');
+}
 }
