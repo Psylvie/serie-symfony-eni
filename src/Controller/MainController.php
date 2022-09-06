@@ -17,6 +17,8 @@ class MainController extends AbstractController
      */
 
     public function test() {
-        return $this->render("main/test.html.twig"); }
-
+        $serie = [ "title" => "Game of Thrones",
+            "year" => 2000 ];
+        return $this->render("main/test.html.twig",
+            [ "mySerie" => $serie, "autreVar" => 412412 ]); }
 }
