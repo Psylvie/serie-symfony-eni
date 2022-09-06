@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="icon" href="{{ asset('img/icon.png') }}">
-
+    {% block extrastyles %}{% endblock %}
 </head>
 <body>
 <div class="container">
@@ -22,7 +22,7 @@
     {% include ('inc/nav.html.twig') %}
 </header>
     {% for label, messages in app.flashes %}
-    {% for message in message %}
+    {% for message in messages %}
     <div class="flash flash-{{ label }}">
         {{ message }}
     </div>
